@@ -1,7 +1,14 @@
 package br.com.fabricadeprogramador.ws.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Cliente {
 	
+	@Id
+	@GeneratedValue
 	private Integer id;
 	private String nome;
 	public Integer getId() {
