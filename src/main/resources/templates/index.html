@@ -4,22 +4,12 @@
 <meta charset="UTF-8"/>
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
 <script src="./js/app.js"></script>
+<script src="./js/controller/cliente-controller.js"></script>
 </head>
-<body ng-controller="indexController">
-
-Oi :D {{cliente.nome}} <br/>
-
-<input type="text" ng-model="cliente.nome"/>
-
-<input type="button" value="Salvar" ng-click="salvarCliente()"/>
-<input type="button" value="Cancelar" ng-click="cancelarAlteracaoCliente()"/>
-
-<div ng-repeat="cli in clientes">
-	{{cli.id + '|' + cli.nome}} 
-	<input type="button" value="Excluir" ng-click="excluirCliente(cli)"/> 
-	<input type="button" value="Alterar" ng-click="alterarCliente(cli)"/>
-</div>
+<body >
+Olá eu sou template
 </body>
 
 </html>
