@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html ng-app="appCliente">
 <head>
+
+<base href="/"  />
 <meta charset="UTF-8"/>
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
 <script src="./js/app.js"></script>
+<script src="./js/controller/main-controller.js"></script>
 <script src="./js/controller/cliente-controller.js"></script>
 <script src="./js/controller/cidade-controller.js"></script>
 <script src="./js/controller/estado-controller.js"></script>
 </head>
-<body >
+<body ng-controller="mainController" >
 Olá eu sou template
 
-<a href="/#/clientes">Clientes</a>
-
+<a href="/clientes">Clientes</a>  | 
+<a href="/cidades">Cidades</a> | 
+<a href="/estados">Estados</a>
+<br/>
+Path: {{$location.path()}}
+Template URL: {{$route.current.templateUrl}}
 <div ng-view="ng-view">
 
 
