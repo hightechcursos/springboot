@@ -6,7 +6,7 @@ appCliente.controller ("indexController", function  ($scope, $http){
 		
 	
 	$scope.clientes=[];
-	$scope.cliente={};
+	$scope.cliente={}; //Bind com o form
 	
 	$scope.carregarClientes= function (){
 		$http({method:'GET', url:'http://localhost:8080/clientes'})
@@ -46,8 +46,17 @@ appCliente.controller ("indexController", function  ($scope, $http){
 			
 		});	
 		
-	}
+	};
 	
+	
+	$scope.alterarCliente= function (cli){
+		$scope.cliente = angular.copy(cli);
+	};
+	
+	
+	$scope.cancelarAlteracaoCliente=function (){
+		$scope.cliente={};
+	};
 	
 	$scope.carregarClientes();
 	
