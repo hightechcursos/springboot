@@ -10,6 +10,7 @@
 <script src="./js/app.js"></script>
 <script src="./js/controller/main-controller.js"></script>
 <script src="./js/controller/cliente-controller.js"></script>
+<script src="./js/controller/cliente-detalhe-controller.js"></script>
 <script src="./js/controller/cidade-controller.js"></script>
 <script src="./js/controller/estado-controller.js"></script>
 </head>
@@ -22,6 +23,8 @@ Olá eu sou template
 <br/>
 Path: {{$location.path()}}
 Template URL: {{$route.current.templateUrl}}
+Parametros: {{$routeParams}}
+
 <div ng-view="ng-view">
 
 

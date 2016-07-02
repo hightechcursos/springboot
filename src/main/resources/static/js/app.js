@@ -7,6 +7,9 @@ appCliente.config(function($routeProvider, $locationProvider) {
 	.when("/clientes", {
 		templateUrl : 'view/cliente.html',
 		controller : 'clienteController'
+	}).when("/clientes/:clienteId", {
+		templateUrl : 'view/cliente-detalhe.html',
+		controller : 'clienteDetalheController'
 	}).when("/cidades", {
 		templateUrl : 'view/cidade.html',
 		controller : 'cidadeController'
