@@ -1,10 +1,70 @@
+<style>
+
+fieldset{
+	display:inline;
+}
+</style>
+
+
 <div>
-Oi :D {{cliente.nome}} <br/>
 
-<input type="text" ng-model="cliente.nome"/>
 
-<input type="button" value="Salvar" ng-click="salvarCliente()"/>
-<input type="button" value="Cancelar" ng-click="cancelarAlteracaoCliente()"/>
+
+<form novalidate name="frmCliente">
+<div>
+	<label> Nome :</label>
+	<input type="text" ng-minlength="3" ng-maxlength="10" name="txtNome" ng-model="cliente.nome" required/>
+	<span ng-show="frmCliente.txtNome.$error.required && frmCliente.txtNome.$dirty">Campo Nome Obrigatório</span>
+	
+</div>
+<div>
+	<label> E-mail: </label>
+	<input type="email" name="txtEmail" ng-model="cliente.email" required/>
+	<span ng-show="frmCliente.txtEmail.$error.required && frmCliente.txtEmail.$dirty">Campo E-mail Obrigatório</span>
+	<span ng-show="frmCliente.txtEmail.$error.email">E-mail inválido</span>
+</div>
+
+
+<input type="button" value="Salvar" ng-click="salvarCliente()"  />
+<input type="button" value="Cancelar" ng-click="cancelarAlteracaoCliente()"  ng-disabled="frmCliente.$invalid" />
+
+<div >
+	<fieldset>
+		<legend>Formulário</legend>
+		Valid: {{frmCliente.$valid}}
+		Pristine: {{frmCliente.$pristine}}
+	
+	</fieldset>
+	
+	<fieldset>
+		<legend>Nome</legend>
+		Valid: {{frmCliente.txtNome.$valid}} <br/>
+		Invalid: {{frmCliente.txtNome.$invalid}} <br/>
+		Pristine: {{frmCliente.txtNome.$pristine}}<br/>
+		Dirty: {{frmCliente.txtNome.$dirty}}<br/>
+		Touched: {{frmCliente.txtNome.$touched}}<br/>
+		Error Required: {{frmCliente.txtNome.$error.required}} </br>
+		Error Min Length: {{frmCliente.txtNome.$error.minlength}} </br>
+		Error Max Length: {{frmCliente.txtNome.$error.maxlength}}
+		
+	</fieldset>
+	
+	<fieldset>
+		<legend>Email</legend>
+		Valid: {{frmCliente.txtEmail.$valid}} <br/>
+		Invalid: {{frmCliente.txtEmail.$invalid}} <br/>
+		Pristine: {{frmCliente.txtEmail.$pristine}}<br/>
+		Dirty: {{frmCliente.txtEmail.$dirty}}<br/>
+		Touched: {{frmCliente.txtEmail.$touched}}<br/>
+		Error Required  {{frmCliente.txtEmail.$error.required}}
+		
+	</fieldset>
+</div>
+
+
+
+</form>
+
 
 <div ng-repeat="cli in clientes">
 	{{cli.id + '|' + cli.nome}} 
