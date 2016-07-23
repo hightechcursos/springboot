@@ -16,6 +16,9 @@ appCliente.config(function($routeProvider, $locationProvider) {
 	}).when("/estados", {
 		templateUrl : 'view/estado.html',
 		controller : 'estadoController'
+	}).when("/login", {
+		templateUrl : 'view/login.html',
+		controller : 'loginController'
 	}).otherwise({
 		rediretTo : '/'
 	});
