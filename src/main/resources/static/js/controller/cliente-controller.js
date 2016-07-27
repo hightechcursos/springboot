@@ -6,6 +6,9 @@ appCliente.controller ("clienteController", function  ($scope, $http){
 	$scope.cliente={}; //Bind com o form
 	
 	carregarClientes= function (){
+		token = localStorage.getItem("userToken");
+		//$http.defaults.headers.common.Authorization = 'Bearer '+ token;
+		
 		$http({method:'GET', url:'/admin/clientes'})
 		.then(function (response){
 			$scope.clientes=response.data;

@@ -1,6 +1,5 @@
 package br.com.fabricadeprogramador.ws.controller;
 
-import java.awt.Toolkit;
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
